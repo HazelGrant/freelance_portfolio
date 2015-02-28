@@ -195,6 +195,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mini_backtrace
+  minitest
   pg
   rails (= 4.2.0)
   rails_12factor
