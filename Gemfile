@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.0'
+
 gem 'pg'
 gem 'rails_12factor'
 
@@ -17,4 +18,8 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+end
+
+group :test do 
+  gem 'mini_backtrace'
 end
