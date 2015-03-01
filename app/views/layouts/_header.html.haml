@@ -1,0 +1,62 @@
+<!-- Begin Header -->
+.row.header
+  <!-- Logo -->
+  .span5.logo
+    %a{href: "#"}
+      .name-brand
+        WendyBeth
+      %h5 acts_as_teachable
+  <!-- Main Navigation -->
+  .span7.navigation
+    .navbar.hidden-phone
+      %ul.nav
+        %li.active
+          %a{href: "#"}
+            About
+        %li.dropdown
+          %a.dropdown-toggle{href: "#", data: { toggle: "dropdown" } }
+            Find Me
+            %b.caret
+          %ul.dropdown-menu
+            %li
+              %a{href: "http://twitter.com/wendybeth010", target: "_blank"}
+                Twitter
+            %li
+              %a{href: "http://github.com/wendybeth", target: "_blank"}
+                GitHub
+        %li
+          %a{href: "#"}
+            Portfolio
+        %li
+          %a{href: "#"}
+            Blog
+        %li
+          %a{href: "#"}
+            Contact
+    .visible-phone
+      .span7.navigation
+        .navbar
+          %ul.nav
+            %li
+              %a{href: "#"}
+                About
+            %li.dropdown
+              %a{href: "#", class: "dropdown-toggle", data: { toggle: "dropdown" } }
+                Find Me
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  %a{href: "http://twitter.com/wendybeth010", target: "_blank"}
+                    on Twitter
+                %li
+                  %a{href: "http://github.com/wendybeth", target: "_blank"}
+                    on GitHub
+            %li
+              %a{href: "#"}
+                Work 
+            %li
+              %a{href: "#"}
+                Blog
+            %li
+              %a{href: "#"}
+                Contact

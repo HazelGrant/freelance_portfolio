@@ -1,4 +1,7 @@
 /*
- *= require bootstrap.min
- *= require bootstrap-theme.min 
+ *= require bootstrap
+ *= require bootstrap-responsive
+ *= require prettyPhoto
+ *= require flexslider
+ *= require custom-styles
  */
