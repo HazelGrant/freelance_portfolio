@@ -29,6 +29,18 @@ class UserTest < ActiveSupport::TestCase
     assert_respond_to @user, :password_confirmation
   end
 
+  test "must have name" do 
+    user = User.new(password: "password",
+                    password_confirmation: "password")
+    assert_not user.save
+  end
+
+  test "must have password" do
+    user = User.new(name: "name",
+                    password_confirmation: "password")
+    assert_not user.save
+  end
+
   test "authenticated? should return false for a user with nil digest" do 
     assert_not @user.authenticated?('')
   end

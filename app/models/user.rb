@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   attr_accessor :remember_token
+  
+  validates :name, presence: true
 
   has_secure_password
 

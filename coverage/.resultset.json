@@ -140,6 +140,19 @@
         1,
         1,
         null,
+        1,
+        null,
+        null
+      ],
+      "/Users/wendybeth/projects/freelance/freelance_portfolio/test/controllers/sessions_controller_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
         null
       ],
       "/Users/wendybeth/projects/freelance/freelance_portfolio/test/controllers/static_pages_controller_test.rb": [
@@ -185,7 +198,7 @@
         1,
         null,
         1,
-        6,
+        8,
         null,
         null,
         1,
@@ -208,6 +221,18 @@
         null,
         null,
         1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
         1,
         null,
         null,
@@ -228,6 +253,8 @@
         1,
         null,
         1,
+        null,
+        1,
         0,
         null,
         0,
@@ -253,40 +280,36 @@
         null,
         null
       ],
-      "/Users/wendybeth/projects/freelance/freelance_portfolio/app/controllers/sessions_controller.rb": [
+      "/Users/wendybeth/projects/freelance/freelance_portfolio/app/controllers/static_pages_controller.rb": [
         1,
         null,
         1,
         null,
         null,
         1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
         null,
         null,
         null
       ],
       "/Users/wendybeth/projects/freelance/freelance_portfolio/app/controllers/application_controller.rb": [
         1,
+        1,
+        1,
         null,
         1,
-        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null,
         null
       ],
       "/Users/wendybeth/projects/freelance/freelance_portfolio/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/wendybeth/projects/freelance/freelance_portfolio/app/helpers/portfolio_pieces_helper.rb": [
         1,
         null
       ],
@@ -337,7 +360,8 @@
         1,
         null
       ],
-      "/Users/wendybeth/projects/freelance/freelance_portfolio/app/controllers/static_pages_controller.rb": [
+      "/Users/wendybeth/projects/freelance/freelance_portfolio/app/controllers/portfolio_pieces_controller.rb": [
+        1,
         1,
         null,
         1,
@@ -347,8 +371,33 @@
         null,
         null,
         null
+      ],
+      "/Users/wendybeth/projects/freelance/freelance_portfolio/app/controllers/sessions_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1425277020
+    "timestamp": 1425277890
   }
 }
