@@ -2,17 +2,15 @@
 .row.header
   <!-- Logo -->
   .span5.logo
-    %a{href: "#"}
-      .name-brand
-        WendyBeth
+    .name-brand
+      = link_to "WendyBeth", root_path
       %h5 acts_as_teachable
   <!-- Main Navigation -->
   .span7.navigation
     .navbar.hidden-phone
       %ul.nav
         %li.active
-          %a{href: "#"}
-            About
+          = link_to "About", about_path
         %li.dropdown
           %a.dropdown-toggle{href: "#", data: { toggle: "dropdown" } }
             Find Me

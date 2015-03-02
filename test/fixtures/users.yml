@@ -1,0 +1,3 @@
+valid_user:
+  name: MyString
+  password_digest: <%= BCrypt::Password.create("password", cost: 4) %>
