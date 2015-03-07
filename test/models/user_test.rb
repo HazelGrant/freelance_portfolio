@@ -45,4 +45,12 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.authenticated?('')
   end
 
+  test "forget and remember toggle user.remember_digest existence" do 
+    @user.remember
+    assert_not @user.remember_digest.nil?
+
+    @user.forget
+    assert @user.remember_digest.nil?
+  end
+
 end
