@@ -9,10 +9,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # POST /resource
-  # def create
-  #   flash[:alert] = "Registration is not allowed."
-  #   redirect_to root_path 
-  # end
+  def create
+    flash[:alert] = "Registration is not allowed."
+    redirect_to root_path 
+  end
 
   # GET /resource/edit
   # def edit
