@@ -4,7 +4,7 @@ ruby '2.1.5'
 gem 'rails', '4.2.0'
 
 gem 'pg'
-gem 'rails_12factor'
+gem 'rails_12factor', group: :production
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -21,10 +21,11 @@ group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem 'selenium-webdriver'
+  gem 'launchy'
 end
 
 group :test do 
-  gem 'minitest'
+  gem 'minitest-rails-capybara'
   gem 'simplecov'
-  gem 'mini_backtrace'
 end
