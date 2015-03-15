@@ -20,4 +20,4 @@
 /vendor/template/*
 
 # Ignore coverage files
-/coverage
+coverage
