@@ -5,6 +5,6 @@ Rails.application.routes.draw do
 
   resources :portfolio_pieces
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: 'users/registrations' }
 
 end
