@@ -9,7 +9,7 @@
   .span7.navigation
     .navbar.hidden-phone
       %ul.nav
-        %li.active
+        %li
           = link_to "About", about_path
         %li.dropdown
           %a.dropdown-toggle{href: "#", data: { toggle: "dropdown" } }
@@ -23,8 +23,7 @@
               %a{href: "http://github.com/wendybeth", target: "_blank"}
                 GitHub
         %li
-          %a{href: "#"}
-            Portfolio
+          = link_to "Portfolio", portfolio_path
         %li
           %a{href: "#"}
             Blog
