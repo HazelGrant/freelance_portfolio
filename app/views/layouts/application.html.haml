@@ -16,5 +16,9 @@
 
   .container
     = render "layouts/header"
+
+    %p.notice= notice
+    %p.alert= alert
+
     = yield
   = render "layouts/footer"
