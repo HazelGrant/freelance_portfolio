@@ -30,3 +30,8 @@
               %a{href: "#"}Blog
               &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
               %a{href: "#"}Contact
+              - if logged_in?
+                %a{href: "#"}Logout
+                &bnsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+              - elsif !logged_in?
+                Why am I not logged in?

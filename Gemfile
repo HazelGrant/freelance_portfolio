@@ -12,7 +12,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'haml-rails'
 
 gem 'jquery-rails'
-gem 'turbolinks'
+# gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 
 gem 'bcrypt', '~> 3.1.7'
@@ -25,7 +25,6 @@ end
 
 group :test do 
   gem 'minitest'
-  gem 'capybara'
   gem 'simplecov'
   gem 'mini_backtrace'
 end

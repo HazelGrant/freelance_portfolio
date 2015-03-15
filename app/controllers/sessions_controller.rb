@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       log_in user
       remember user
+      flash.now[:notice] = "Signed in successfully!"
       redirect_to root_path    
     else
       flash.now[:danger] = "You are not welcome here."    
