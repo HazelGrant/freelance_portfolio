@@ -1,0 +1,10 @@
+.row
+  .span8
+    %h2.title-bg New Portfolio Piece
+
+    .well
+      .input-append
+        = form_for @portfolio_piece do |f|
+          %h5 Name 
+          = f.text_field :name, class: "span4"
+          = f.submit 'Save', class: "btn btn-inverse"

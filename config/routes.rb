@@ -2,8 +2,8 @@ Rails.application.routes.draw do
   
   root 'static_pages#home'
   get '/about'      => 'static_pages#about'
-
-  resources :portfolio_pieces, except: [:index]
+  
+  resources :portfolio_pieces, except: [:index], path: 'portfolio-pieces'
   get '/portfolio', controller: "portfolio_pieces", action: "index"
 
   devise_for :users, controllers: { registrations: 'users/registrations' }
