@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class PortfolioContributorTest < ActiveSupport::TestCase
+class PortfolioContributionTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
