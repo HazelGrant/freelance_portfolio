@@ -2,6 +2,7 @@ class PortfolioPiecesController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create]
 
   def index
+    @portfolio_pieces = PortfolioPiece.page params[:page]
   end
 
   def show

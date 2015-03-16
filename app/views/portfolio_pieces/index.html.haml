@@ -1,0 +1,19 @@
+.row
+
+  .span12.gallery
+
+    .row.clearfix
+
+      - if user_signed_in?
+        .span8
+        .span4
+          %h4.title-bg.pull-right
+            = link_to "Add New", new_portfolio_piece_path
+
+      %ul.gallery-post-grid.holder
+        = render @portfolio_pieces
+
+    .row
+      .span8
+        .pagination
+          = paginate @portfolio_pieces

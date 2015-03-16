@@ -1,3 +1,10 @@
-// Place all the styles related to the portfolio_pieces controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.pp_content {
+  border-top: 7px solid white;
+  border-right: 7px solid white;
+  border-left: 7px solid white;
+  border-radius: 5px;
+}
+
+.pp_close {
+  background-image: image-url("default-spite.png");
+}

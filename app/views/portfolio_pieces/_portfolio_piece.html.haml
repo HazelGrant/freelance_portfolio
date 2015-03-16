@@ -1,0 +1,11 @@
+%li.span4.gallery-item
+  %span.gallery-hover-3col.hidden-phone.hidden-tablet
+    %span.gallery-icons
+      %a.item-zoom-link.lightbox{href: "#{image_url "gallery-img-1-full.jpg"}", data: { rel: "prettyPhoto" } }
+      %a.item-details-link{href: "#show"}
+  %a{href: "#"}
+    = image_tag "gallery-img-1-3col.jpg", alt: "gallery"
+  %span.project-details
+    %a{href: "#"}
+      = portfolio_piece.name
+    A description goes here.
