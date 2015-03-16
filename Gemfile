@@ -19,6 +19,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'better_errors', group: :development
+gem 'pry-rescue'
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'

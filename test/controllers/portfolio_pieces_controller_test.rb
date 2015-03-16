@@ -15,7 +15,7 @@ class PortfolioPiecesControllerTest < ActionController::TestCase
   test "get new if signed in" do 
     sign_in users(:valid_user)
     get :new
-    
+
     assert_response :success
   end
 
