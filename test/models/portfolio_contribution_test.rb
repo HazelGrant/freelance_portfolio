@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class PortfolioContributionTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "valid contribution is valid" do 
+    assert portfolio_contributions(:valid_contribution).save
+  end
 end

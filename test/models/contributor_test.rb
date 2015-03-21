@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ContributorTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "contributor is valid" do 
+    assert contributors(:valid_contributor).save
+  end
 end
