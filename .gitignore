@@ -21,3 +21,5 @@
 
 # Ignore coverage files
 coverage
+
+.env

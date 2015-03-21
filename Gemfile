@@ -16,8 +16,12 @@ gem 'jquery-rails'
 
 gem 'jbuilder', '~> 2.0'
 
+gem 'mail_form', '~> 1.5.0.rc'
+gem 'simple_form', '~> 3.1.0.rc1'
+
 gem 'devise'
 gem 'bcrypt', '~> 3.1.7'
+gem 'dotenv-rails'
 
 gem 'better_errors', group: :development
 gem 'pry-rescue'

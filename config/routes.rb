@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :portfolio_pieces, except: [:index], path: 'portfolio-pieces'
   get '/portfolio', controller: "portfolio_pieces", action: "index"
 
+  resources "contacts", only: [:new, :create]
+
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
 end

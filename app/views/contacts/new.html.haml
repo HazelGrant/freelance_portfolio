@@ -1,0 +1,24 @@
+.row
+  .span3
+  .span6.contact.well.contact-well
+    %h2 Contact WendyBeth
+
+    = simple_form_for @contact, html: { multipart: true, id: "contact-form" } do |f|
+      .input-prepend
+        %span.add-on
+          %i.fa.fa-user
+        = f.input_field :name, class: "span4", id: "preprendedInput", size: "16", placeholder: "Name"
+      .input-prepend
+        %span.add-on
+          %i.fa.fa-envelope
+        = f.input_field :email, class: "span4", id: "prependedInput", size: "16", placeholder: "Email Address"
+      .input-prepend
+        %span.add-on
+          %i.fa.fa-globe
+        = f.input_field :website, class: "span4", id: "prependedInput", size: "16", placeholder: "Website URL"
+      = f.input_field :message, as: :text, class: "span6"
+      = f.input :nickname, as: :hidden, hint: 'Leave this field blank.'
+      .row{style: "margin-bottom: 0px;"}
+        .span2
+          = f.button :submit, 'Send message', class: "btn btn-inverse"
+  .span3

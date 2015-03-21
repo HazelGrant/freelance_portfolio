@@ -6,6 +6,5 @@
   %a{href: "#"}
     = image_tag "gallery-img-1-3col.jpg", alt: "gallery"
   %span.project-details
-    %a{href: "#"}
-      = portfolio_piece.name
+    = link_to portfolio_piece.name, portfolio_piece
     A description goes here.
