@@ -13,9 +13,6 @@
 
         %ul.project-info
           %li
-            %h6 Date:
-            Daterange
-          %li
             %h6 Client:
             = @portfolio_piece.client
           %li
@@ -36,7 +33,11 @@
           = link_to portfolio_piece_path(@portfolio_piece), method: :delete, data: { confirm: "Are you sure?" }, class: "pull-right" do 
             &nbsp;
             %i.fa.fa-trash-o
-            Destroy
+              Destroy
+          = link_to "#", class: "pull-right" do 
+            &nbsp;
+            %i.fa.fa-file-photo-o
+            Add image
         %a.pull-right{href: "#"}
           %i.fa.fa-arrow-left
           Back to Gallery

@@ -35,4 +35,7 @@ class PortfolioPieceTest < ActiveSupport::TestCase
     assert_respond_to @piece, :contributors
   end
 
+  test "responds to primary technology" do 
+    assert_respond_to @piece, :primary_technology
+  end
 end
