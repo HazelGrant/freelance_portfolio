@@ -18,9 +18,11 @@
     = render "layouts/header"
 
     - if notice
-      %p.notice= notice
+      .span6.alert.alert-success
+        = notice
     - if alert
-      %p.alert= alert
+      .span6.alert.alert-danger
+        = alert
 
     = yield
   = render "layouts/footer"
