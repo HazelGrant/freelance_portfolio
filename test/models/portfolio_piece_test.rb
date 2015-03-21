@@ -35,8 +35,4 @@ class PortfolioPieceTest < ActiveSupport::TestCase
     assert_respond_to @piece, :contributors
   end
 
-#  test "responds to documents" do 
-#    assert_respond_to @piece, :documents
-#  end
-
 end

@@ -3,8 +3,16 @@
     %h2.title-bg New Portfolio Piece
 
     .well
-      .input-append
-        = form_for @portfolio_piece do |f|
-          %h5 Name 
-          = f.text_field :name, class: "span4"
-          = f.submit 'Save', class: "btn btn-inverse"
+      = simple_form_for @portfolio_piece, html: { multipart: true } do |f|
+        .input-prepend
+          %span.add-on
+            %i.fa.fa-tag
+          = f.input_field :name, class: "span4", placeholder: "Name", id: "prependedInput", size: "16"
+        .input-prepend
+          %span.add-on
+            %i.fa.fa-user-secret
+          = f.input_field :client, class: "span4", placeholder: "Client", id: "prependedInput", size: "16"
+        = f.input_field :description, as: :text, class: "span6", placeholder: "description", rows: "10"
+        .row
+          .span2
+            = f.submit 'Save', class: "btn btn-inverse"
