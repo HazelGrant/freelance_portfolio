@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class ImageTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "is valid" do 
+    assert images(:valid_image).save
+  end
 end

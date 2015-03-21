@@ -1,0 +1,7 @@
+.row
+  .span8
+    %h2.title-bg Edit Image
+
+    .well
+      = simple_form_for @image, url: portfolio_piece_image_path(portfolio_piece_id: @portfolio_piece, id: @image), html: { multipart: true } do |f|
+        = render "form", f: f
