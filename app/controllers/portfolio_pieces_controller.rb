@@ -1,12 +1,12 @@
 class PortfolioPiecesController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create]
+  before_filter :authenticate_user!, except: [:show, :index]
+  before_action :set_piece, only: [:show, :edit, :update, :destroy]
 
   def index
     @portfolio_pieces = PortfolioPiece.page params[:page]
   end
 
   def show
-    @portfolio_piece = PortfolioPiece.find(params[:id])
   end
 
   def new
@@ -25,10 +25,32 @@ class PortfolioPiecesController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @portfolio_piece.update_attributes(portfolio_piece_params)
+      flash[:notice] = "Piece saved."
+      redirect_to @portfolio_piece
+    else
+      flash[:alert] = "Could not save piece."
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @portfolio_piece.destroy
+    flash[:notice] = "Portfolio piece destroyed."
+    redirect_to '/portfolio'
+  end
+
   private
 
   def portfolio_piece_params
-    params.require(:portfolio_piece).permit(:name)
+    params.require(:portfolio_piece).permit(:name, :client, :description)
   end
 
+  def set_piece
+    @portfolio_piece = PortfolioPiece.find(params[:id])
+  end
 end

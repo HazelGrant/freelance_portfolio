@@ -54,4 +54,62 @@ class PortfolioPiecesControllerTest < ActionController::TestCase
     assert_response :redirect
   end
 
+  test "get edit if signed in" do 
+    sign_in users(:valid_user)
+    get :edit, id: portfolio_pieces(:valid_piece)
+    assert_response :success
+  end
+
+  test "redirect from edit if not signed in" do 
+    get :edit, id: portfolio_pieces(:valid_piece)
+    assert_response :redirect
+  end
+
+  test "put update if signed in" do 
+    sign_in users(:valid_user)
+
+    put :update, id: portfolio_pieces(:valid_piece),
+                 portfolio_piece: { name: "New Name" }
+
+    assert_response :redirect
+    assert PortfolioPiece.find(portfolio_pieces(:valid_piece).id).name == "New Name"
+  end
+
+  test "redirect from update if not signed in" do 
+    put :update, id: portfolio_pieces(:valid_piece),
+                 portfolio_piece: { name: "New Name" }
+
+    assert_response :redirect
+    assert_not PortfolioPiece.find(portfolio_pieces(:valid_piece).id).name == "New Name"
+  end
+
+  test "invalid update re-renders edit" do 
+    sign_in users(:valid_user)
+
+    put :update, id: portfolio_pieces(:valid_piece),
+                 portfolio_piece: { name: "" }
+
+    assert flash[:alert] == "Could not save piece."
+    assert_template 'edit'
+  end
+
+  test "signed in user can destroy" do 
+    sign_in users(:valid_user)
+
+    assert_difference('PortfolioPiece.count', -1) do 
+      delete :destroy, id: portfolio_pieces(:valid_piece)
+    end
+
+    assert flash[:notice] == "Portfolio piece destroyed."
+    assert_response :redirect
+  end
+
+  test "not signed in user cannot destroy" do
+    assert_no_difference('PortfolioPiece.count') do 
+      delete :destroy, id: portfolio_pieces(:valid_piece)
+    end
+
+    assert_response :redirect
+  end
+
 end

@@ -1,0 +1,42 @@
+.row
+  .span12.gallery-single
+
+    .row
+      .span6
+        = image_tag "http://placehold.it/600x800", class: "align-left thumbnail", alt: "image"
+
+      .span6
+        %h2
+          = @portfolio_piece.name
+        %p.lead
+          = raw @portfolio_piece.description
+
+        %ul.project-info
+          %li
+            %h6 Date:
+            Daterange
+          %li
+            %h6 Client:
+            = @portfolio_piece.client
+          %li
+            %h6 Primary Technology:
+            Ruby on Rails
+          %li
+            %h6 Contributors
+            Other people on the project
+
+        %button.btn.btn-inverse.pull-left{type: "button"}
+          Visit
+
+        - if user_signed_in?
+          = link_to edit_portfolio_piece_path(@portfolio_piece), class: "pull-right" do
+            &nbsp; 
+            %i.fa.fa-pencil
+            Edit
+          = link_to portfolio_piece_path(@portfolio_piece), method: :delete, data: { confirm: "Are you sure?" }, class: "pull-right" do 
+            &nbsp;
+            %i.fa.fa-trash-o
+            Destroy
+        %a.pull-right{href: "#"}
+          %i.fa.fa-arrow-left
+          Back to Gallery
