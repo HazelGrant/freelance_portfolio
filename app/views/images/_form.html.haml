@@ -1,3 +1,11 @@
-= f.input :description
-= f.input :photo, as: :file
-= f.submit 'Save'
+= f.input_field :photo, as: :file
+%p
+.input-prepend
+  %span.add-on
+    %i.fa.fa-file-o
+  = f.input_field :description, as: :string, class: 'span4', placeholder: "Description", id: "prependedInput", size: "16"
+
+%p
+.row
+  .span2
+    = f.submit 'Save', class: 'btn btn-inverse'
