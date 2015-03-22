@@ -1,0 +1,15 @@
+.row
+  .span12.gallery
+    .row.clearfix
+
+      %ul.gallery-post-grid.holder
+        - @images.each do |image|
+          %li.span4.gallery-item
+            %a{href: "#"}
+              = image_tag image.embed_url, alt: "#{image.description}"
+            %span.project-details
+              = link_to image.description, portfolio_piece_image_path(portfolio_piece_id: image.portfolio_piece.id, id: image.id)
+    .row
+      .span8
+        .pagination
+          = paginate @images

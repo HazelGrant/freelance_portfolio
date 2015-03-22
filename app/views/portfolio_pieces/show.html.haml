@@ -3,8 +3,8 @@
 
     .row
       .span6
-        = image_tag "http://placehold.it/600x800", class: "align-left thumbnail", alt: "image"
-
+        - if @portfolio_piece.images.any?
+          = image_tag @portfolio_piece.images.first.embed_url
       .span6
         %h2
           = @portfolio_piece.name
@@ -21,23 +21,25 @@
           %li
             %h6 Contributors
             Other people on the project
-
+          %li
+            %h6 Images
+            = link_to "All Photos", portfolio_piece_images_path(@portfolio_piece)
         %button.btn.btn-inverse.pull-left{type: "button"}
           Visit
 
         - if user_signed_in?
           = link_to edit_portfolio_piece_path(@portfolio_piece), class: "pull-right" do
-            &nbsp; 
+            &nbsp;
             %i.fa.fa-pencil
             Edit
-          = link_to portfolio_piece_path(@portfolio_piece), method: :delete, data: { confirm: "Are you sure?" }, class: "pull-right" do 
+          = link_to portfolio_piece_path(@portfolio_piece), method: :delete, data: { confirm: "Are you sure?" }, class: "pull-right" do
             &nbsp;
             %i.fa.fa-trash-o
               Destroy
-          = link_to new_portfolio_piece_image_path(@portfolio_piece), class: "pull-right" do 
+          = link_to new_portfolio_piece_image_path(@portfolio_piece), class: "pull-right" do
             &nbsp;
             %i.fa.fa-file-photo-o
             Add image
-        %a.pull-right{href: "#"}
+        = link_to portfolio_path, class: "pull-right" do
           %i.fa.fa-arrow-left
-          Back to Gallery
+          Back to Portfolio

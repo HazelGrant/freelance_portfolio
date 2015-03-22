@@ -1,19 +1,20 @@
 class ImagesController < ApplicationController
   before_filter :authenticate_user!, except: [:index, :show]
+  before_action :set_portfolio_piece
+  before_action :set_image, only: [:show, :edit, :update]
 
   def index
+    @images = @portfolio_piece.images.page params[:page]
   end
 
   def show
   end
 
   def new
-    @portfolio_piece = PortfolioPiece.find(params[:portfolio_piece_id])
     @image = @portfolio_piece.images.new
   end
 
   def create
-    @portfolio_piece = PortfolioPiece.find(params[:portfolio_piece_id])
     @image = @portfolio_piece.images.new(image_params)
 
     if @image.save
@@ -26,14 +27,9 @@ class ImagesController < ApplicationController
   end
 
   def edit
-    @portfolio_piece = PortfolioPiece.find(params[:portfolio_piece_id])
-    @image = @portfolio_piece.images.find(params[:id])
   end
 
   def update
-    @portfolio_piece = PortfolioPiece.find(params[:portfolio_piece_id])
-    @image = @portfolio_piece.images.find(params[:id])
-
     if @image.update_attributes(image_params)
       flash[:notice] = "Image saved."
       redirect_to portfolio_piece_image_path(portfolio_piece_id: @portfolio_piece, id: @image)
@@ -47,5 +43,13 @@ class ImagesController < ApplicationController
 
   def image_params
     params.require(:image).permit(:portfolio_piece_id, :photo, :description)
+  end
+
+  def set_portfolio_piece
+    @portfolio_piece = PortfolioPiece.find(params[:portfolio_piece_id])
+  end
+
+  def set_image
+    @image = @portfolio_piece.images.find(params[:id])
   end
 end
