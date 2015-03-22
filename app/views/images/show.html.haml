@@ -1,4 +1,26 @@
 .row
-  .span12.gallery-single
+  .span6.pull-left
+    = link_to portfolio_piece_path(@portfolio_piece) do
+      &nbsp;
+      %i.fa.fa-arrow-left
+      %i.fa.fa-arrow-left
+        Back to
+        = @portfolio_piece.name
+    = link_to portfolio_piece_images_path(@portfolio_piece) do
+      &nbsp;
+      %i.fa.fa-arrow-left
+        All Images for
+        = @portfolio_piece.name
 
-    = image_tag @image.embed_url
+.row
+  .span12.gallery-single
+    %h1.title-bg
+      = @image.description
+    = image_tag @image.embed_url, class: "thumbnail image-show"
+
+    - if user_signed_in?
+      = link_to edit_portfolio_piece_image_path(portfolio_piece_id: @portfolio_piece.id, id: @image.id)  do
+        &nbsp;
+        %i.fa.fa-pencil
+          Edit
+

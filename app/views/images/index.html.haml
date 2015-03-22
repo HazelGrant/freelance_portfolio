@@ -1,12 +1,25 @@
 .row
+  .span6.pull-left
+    = link_to portfolio_piece_path(@portfolio_piece) do 
+      &nbsp;
+      %i.fa.fa-arrow-left
+      %i.fa.fa-arrow-left
+      Back to
+      = @portfolio_piece.name
+
+
+.row
   .span12.gallery
     .row.clearfix
+
+      %h1.title-bg
+        Images for
+        = @portfolio_piece.name
 
       %ul.gallery-post-grid.holder
         - @images.each do |image|
           %li.span4.gallery-item
-            %a{href: "#"}
-              = image_tag image.embed_url, alt: "#{image.description}"
+            = link_to(image_tag(image.embed_url, alt: "#{image.description}"), portfolio_piece_image_path(portfolio_piece_id: @portfolio_piece.id, id: image.id))
             %span.project-details
               = link_to image.description, portfolio_piece_image_path(portfolio_piece_id: image.portfolio_piece.id, id: image.id)
     .row

@@ -1,9 +1,16 @@
 .row
+  .span6.pull-left
+    = link_to portfolio_path do
+      &nbsp;
+      %i.fa.fa-arrow-left
+      Back to Portfolio
+
+.row
   .span12.gallery-single
 
     .row
       .span6
-        = image_tag @portfolio_piece.default_image.embed_url unless !@portfolio_piece.default_image
+        = link_to(image_tag(@portfolio_piece.default_image.embed_url, class: "pull-left thumbnail"), portfolio_piece_image_path(portfolio_piece_id: @portfolio_piece.id, id: @portfolio_piece.default_image.id)) unless !@portfolio_piece.default_image
       .span6
         %h2
           = @portfolio_piece.name
@@ -37,6 +44,3 @@
             &nbsp;
             %i.fa.fa-file-photo-o
             Add image
-        = link_to portfolio_path, class: "pull-right" do
-          %i.fa.fa-arrow-left
-          Back to Portfolio
