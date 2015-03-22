@@ -3,8 +3,7 @@
 
     .row
       .span6
-        - if @portfolio_piece.images.any?
-          = image_tag @portfolio_piece.images.first.embed_url
+        = image_tag @portfolio_piece.default_image.embed_url unless !@portfolio_piece.default_image
       .span6
         %h2
           = @portfolio_piece.name

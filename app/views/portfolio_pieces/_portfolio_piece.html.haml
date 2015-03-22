@@ -1,11 +1,14 @@
 %li.span4.gallery-item
   %span.gallery-hover-3col.hidden-phone.hidden-tablet
     %span.gallery-icons
-      - if portfolio_piece.images.any?
-        %a.item-zoom-link.lightbox{href: "#{image_url "#{portfolio_piece.images.first.photo.url}"}", data: { rel: "prettyPhoto" } }
+      - if portfolio_piece.default_image
+        %a.item-zoom-link.lightbox{href: "#{image_url "#{portfolio_piece.default_image.embed_url}"}", data: { rel: "prettyPhoto" } }
       %a.item-details-link{href: "#show"}
   %a{href: "#"}
-    = image_tag "gallery-img-1-3col.jpg", alt: "gallery"
+    - if portfolio_piece.default_image
+      = image_tag portfolio_piece.default_image.embed_url
+    - else
+      = image_tag "gallery-img-1-3col.jpg", alt: "gallery"
   %span.project-details
     = link_to portfolio_piece.name, portfolio_piece
     A description goes here.
