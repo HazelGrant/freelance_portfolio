@@ -15,16 +15,14 @@
             %h6 Client:
             = @portfolio_piece.client
           %li
-            %h6 Primary Technology:
-            Ruby on Rails
-          %li
-            %h6 Contributors
-            Other people on the project
+            %h6 Primary Technologies:
+            = @portfolio_piece.primary_technology
           %li
             %h6 Images
             = link_to "All Photos", portfolio_piece_images_path(@portfolio_piece)
-        %button.btn.btn-inverse.pull-left{type: "button"}
-          Visit
+        - if @portfolio_piece.url
+          %button.btn.btn-inverse.pull-left{type: "button"}
+            = link_to "Visit", @portfolio_piece.url, target: "_blank", class: "btn-link"
 
         - if user_signed_in?
           = link_to edit_portfolio_piece_path(@portfolio_piece), class: "pull-right" do

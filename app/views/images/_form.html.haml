@@ -6,6 +6,9 @@
   = f.input_field :description, as: :string, class: 'span4', placeholder: "Description", id: "prependedInput", size: "16"
 
 %p
+= f.input :default, as: :boolean, label: 'Default image?'
+
+%p
 .row
   .span2
     = f.submit 'Save', class: 'btn btn-inverse'

@@ -48,7 +48,7 @@ class PortfolioPiecesController < ApplicationController
 
   def portfolio_piece_params
     params.require(:portfolio_piece).permit(:name, :client, :description,
-                                            :primary_technology)
+                                            :primary_technology, :url)
   end
 
   def set_piece

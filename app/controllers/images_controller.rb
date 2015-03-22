@@ -42,7 +42,8 @@ class ImagesController < ApplicationController
   private
 
   def image_params
-    params.require(:image).permit(:portfolio_piece_id, :photo, :description)
+    params.require(:image).permit(:portfolio_piece_id, :photo,
+                                  :description, :default)
   end
 
   def set_portfolio_piece

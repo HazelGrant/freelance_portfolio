@@ -11,6 +11,10 @@
     %span.add-on
       %i.fa.fa-user-secret
     = f.input_field :client, class: "span4", placeholder: "Client", id: "prependedInput", size: "16"
+  .input-prepend
+    %span.add-on
+      %i.fa.fa-globe
+    = f.input_field :url, class: "span4", placeholder: "URL", id: "prependedInput", size: "16"
   = f.input_field :description, as: :text, class: "span6", placeholder: "description", rows: "10"
   .row
     .span2
