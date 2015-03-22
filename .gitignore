@@ -23,3 +23,6 @@
 coverage
 
 .env
+
+# Don't need dev photos in the repo
+public/system
