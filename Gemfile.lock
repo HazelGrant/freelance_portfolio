@@ -160,7 +160,7 @@ GEM
     pry-rescue (1.4.1)
       interception (>= 0.5)
       pry
-    rack (1.6.0)
+    rack (1.6.12)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.0)
